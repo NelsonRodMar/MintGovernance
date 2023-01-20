@@ -9,7 +9,7 @@ contract MyToken is ERC20, ERC20Permit, ERC20Votes {
     address public governor;
 
     modifier onlyGovernor{
-        require(governor == msg.sender);
+        require(governor == msg.sender, "MyToken: sender is not governor address");
         _;
     }
 
